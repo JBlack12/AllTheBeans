@@ -1,7 +1,9 @@
 # AllTheBeans
 
 ## Pre-Requisites
-In order to run this project you will need to have Docker installed in order to run it from the command line
+In order to run this project you will need:
+- Docker
+- A Web Browser
 
 ## Steps to run
 - In your terminal ensure you are at the root of the project where the ``docker-compose.yml`` file is located
