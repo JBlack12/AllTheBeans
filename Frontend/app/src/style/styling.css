@@ -1,0 +1,64 @@
+body {
+    background-color: #F5F5F5;
+}
+
+.background {
+    background: black;
+}
+
+.centre-text {
+    text-align: center;
+}
+
+.title-font {
+    font-weight: bold;
+    color: black;
+}
+
+.background-grey {
+    background-color: #2F4F4F;
+}
+
+.background-white {
+    background-color: white;
+}
+
+.pd-title-top {
+    padding-top: 2vh;
+    padding-bottom: 3vh;
+}
+
+.pd-nav-top {
+    padding-top: 1vh;
+}
+
+.title-img {
+    width: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-title {
+    border: 2 px black solid;
+}
+
+.navbar {
+    background-color: rgb(250, 148, 52);
+}
+
+.nav-text {
+    color: white;
+}
+
+.nav-text:hover {
+    color: black;
+}
+.solid-border {
+    border-style: solid;
+    border-color: rgb(250, 148, 52);
+}
+
+.text-align {
+    text-align: center;
+}
