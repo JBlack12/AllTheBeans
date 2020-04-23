@@ -20,6 +20,7 @@
     "@nestjs/common": "^6.7.2",
     "@nestjs/core": "^6.7.2",
     "@nestjs/platform-express": "^6.7.2",
+    "@types/axios": "^0.14.0",
     "aws-sdk": "^2.659.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",

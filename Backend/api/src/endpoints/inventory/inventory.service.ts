@@ -77,8 +77,15 @@ export class InventoryService {
     return new ResponseObj(500, {ErrMessage: 'File could not be uploaded'});
   }
 
-  async getBeanOfTheDay(): Promise<ResponseObj> {
-    const date = FormatCurrentDate();
+  async getBeanOfTheDay(selectedDate?, authKey?): Promise<ResponseObj> {
+
+    let date;
+    if (selectedDate && authKey && authKey === 'ThisIsTheRequiredKey') {
+      date = selectedDate;
+    } else {
+      date = FormatCurrentDate();
+    }
+
     const params: QueryInput = {
       TableName: 'Inventory',
       ExpressionAttributeValues: {

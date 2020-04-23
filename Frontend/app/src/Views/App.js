@@ -54,7 +54,7 @@ function App() {
                   <ProtectedRoute UserLevel={isAuth.UserLevel}></ProtectedRoute>
                 </Route>
                 <Route path="/">
-                  <MainView></MainView>
+                  <MainView isAdmin={isAuth.Authenticated}></MainView>
                 </Route>
               </Switch>
             </Card>

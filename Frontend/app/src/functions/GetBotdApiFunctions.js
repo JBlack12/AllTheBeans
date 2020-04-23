@@ -1,8 +1,8 @@
 import { AxiosBase } from "./AxiosBase";
 
 export class GetBotdApiFunctions extends AxiosBase {
-    async GetBotdInfo() {
-    const result = this.GetRequest("http://localhost:3000/inventory");
+  async GetBotdInfo(url) {
+    const result = this.GetRequest(url);
     return result;
   }
 }

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, UseInterceptors, UploadedFile } from '@nestjs/common';
+import { Controller, Get, Post, Body, UseInterceptors, UploadedFile, Query } from '@nestjs/common';
 import { InventoryService } from './inventory.service';
 import { AddBeanRequest } from 'src/models/inventory-requests/addBeanRequest';
 import ResponseObj from '../../models/ResponseStructure';
@@ -20,7 +20,7 @@ export class InventoryController {
   }
 
   @Get()
-  async getBeanOfTheDay(): Promise<ResponseObj> {
-    return await this.inventoryService.getBeanOfTheDay();
+  async getBeanOfTheDay(@Query('date') selectedDate?, @Query('key') authKey?): Promise<ResponseObj> {
+    return await this.inventoryService.getBeanOfTheDay(selectedDate, authKey);
   }
 }

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Col, CardHeader, CardBody, CardTitle, CardImg } from "shards-react";
+import { Col, CardHeader, CardBody, CardImg } from "shards-react";
 import CollapseBeanInfo from "../Components/BotdCollapse/collapse";
 import ArrowPoint from "../Components/Title/ArrowPointer";
 
-export default function MainView() {
+export default function MainView({ isAdmin }) {
   const [DisplayCoffeeInfo, SetDisplayCoffee] = useState(false);
 
   return (
@@ -22,7 +22,9 @@ export default function MainView() {
         </div>
       </CardBody>
       <CardBody>
-        <CollapseBeanInfo DisplaySection={DisplayCoffeeInfo}></CollapseBeanInfo>
+        <CollapseBeanInfo
+          DisplaySection={{ DisplayCoffeeInfo, isAdmin }}
+        ></CollapseBeanInfo>
       </CardBody>
     </Col>
   );

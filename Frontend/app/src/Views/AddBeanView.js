@@ -12,10 +12,8 @@ import "moment/locale/fr.js";
 import "rc-datepicker/lib/style.css";
 import { PostBeanFunctions } from "../functions/PostBeanFunctions";
 import { CustomTooltip } from "../Components/FormToolTip/CustomToolTip";
-import { useHistory } from "react-router-dom";
 
 export default function AddBeanView() {
-  const history = useHistory();
   const [BeanFormData, SetBeanFormData] = useState({
     name: "",
     colour: "",
