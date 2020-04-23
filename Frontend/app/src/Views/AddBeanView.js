@@ -170,11 +170,8 @@ export default function AddBeanView() {
   }
 
   function CustomAlert({ FormSubmitted }) {
-    function addAnotherBean() {
-      history.push("/AddBean");
-    }
     return FormSubmitted.submitted ? (
-      <div onClick={() => addAnotherBean()}>
+      <div>
         <Alert
           className="text-align"
           theme={FormSubmitted.success ? "success" : "danger"}
@@ -215,7 +212,7 @@ export default function AddBeanView() {
             ></DatePickerInput>
           </FormGroup>
           <FormGroup>
-            <label>Price</label>
+            <label>Price (£)</label>
             <FormInput
               valid={isValidData.price.valid}
               invalid={isValidData.price.invalid}
