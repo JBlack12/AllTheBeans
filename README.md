@@ -14,3 +14,8 @@ In order to run this project you will need:
 ## Want to take down a server?
 - Simply run the command ``docker stop internal-api`` or ``docker stop frontend``
 - When you want to start them back up run the opposite, replacing ``stop`` with ``start``
+
+## Logging into the admin account
+Simply use the following credentials:
+- Username = ``Admin``
+- Password = ``AdminPass``
