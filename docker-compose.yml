@@ -1,0 +1,48 @@
+version: '3'
+services:
+  frontend:
+    build: ./frontend
+    stdin_open: true
+    tty: true
+    ports:
+      - "8082:8082"
+    container_name: frontend
+    networks:
+        - default
+
+  localstack:
+    image: "localstack/localstack:latest"
+    environment:
+      - SERVICES=dynamodb,s3
+      - DEFAULT_REGION=eu-west-1
+      - DATA_DIR=/tmp/localstack/data
+    ports:
+      - "4569:4569"
+      - "4572:4572"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: localstack
+    networks:
+      - default
+
+  internal-api:
+    build: ./Backend
+    environment:
+      - AWS_ACCESS_KEY_ID=KEY
+      - AWS_SECRET_ACCESS_KEY=SECRET
+      - AWS_REGION=eu-west-1
+      - ENVIRONMENT=ci
+      - NODE_ENV=ci
+    container_name: internal-api
+    stdin_open: true
+    tty: true
+    ports:
+      - "3000:3000"
+    depends_on:
+      - localstack
+    networks:
+      - default
+      
+networks:
+  default:
